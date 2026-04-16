@@ -623,3 +623,247 @@ ul {
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 1024px) {
+  /* 平板、小笔记本 */
+}
+
+@media (max-width: 768px) {
+  /* 手机主适配 */
+}
+
+@media (max-width: 480px) {
+  /* 小屏手机细调 */
+}
+
+@media (max-width: 1024px) {
+  .container {
+    width: min(92%, 1000px);
+  }
+
+  .hero,
+  .page-hero,
+  .section {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .grid-2,
+  .card-grid,
+  .service-layout,
+  .contact-layout,
+  .team-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .issue-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+  }
+
+  .site-header {
+    position: static;
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 16px 0;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 18px;
+  }
+
+  nav a {
+    font-size: 0.92rem;
+  }
+
+  .logo-link {
+    gap: 10px;
+  }
+
+  .logo-image {
+    width: 34px;
+    height: 34px;
+  }
+
+  .logo-text {
+    font-size: 1rem;
+  }
+
+  .hero,
+  .hero-with-image {
+    padding: 84px 0 68px;
+  }
+
+  .page-hero {
+    padding: 72px 0 56px;
+  }
+
+  .hero h1,
+  .page-hero h1 {
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+    line-height: 1.35;
+  }
+
+  h3 {
+    font-size: 1.15rem;
+  }
+
+  .hero-text,
+  .section-desc,
+  .team-intro,
+  .team-section p,
+  .team-meta p,
+  .contact-item p,
+  .card p,
+  .service-card p {
+    font-size: 0.98rem;
+    line-height: 1.8;
+  }
+
+  .section {
+    padding: 56px 0;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+    padding: 12px 18px;
+  }
+
+  .card,
+  .service-card,
+  .contact-main-card,
+  .contact-side-card {
+    padding: 22px;
+    border-radius: 16px;
+  }
+
+  .issue-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-item {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 20px;
+  }
+
+  .timeline-number {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 88%;
+  }
+
+  .hero,
+  .hero-with-image {
+    padding: 72px 0 56px;
+  }
+
+  .page-hero {
+    padding: 60px 0 48px;
+  }
+
+  .hero h1,
+  .page-hero h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.42rem;
+  }
+
+  .eyebrow {
+    font-size: 0.74rem;
+    letter-spacing: 1.5px;
+  }
+
+  .btn {
+    font-size: 0.94rem;
+  }
+
+  nav {
+    gap: 10px 14px;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .team-grid {
+    gap: 52px;
+    margin-top: 28px;
+  }
+
+  .team-profile {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding-bottom: 48px;
+  }
+
+  .team-profile-photo {
+    position: static;
+    top: auto;
+    max-width: 320px;
+  }
+
+  .team-photo-stage {
+    padding: 18px;
+  }
+
+  .team-profile-content {
+    max-width: 100%;
+  }
+
+  .team-name {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+
+  .team-intro {
+    margin-bottom: 20px;
+  }
+
+  .team-section {
+    padding: 18px 0;
+  }
+
+  .team-meta {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding-top: 18px;
+  }
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 18px;
+}
