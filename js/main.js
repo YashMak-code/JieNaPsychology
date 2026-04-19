@@ -34,4 +34,17 @@ document.addEventListener("DOMContentLoaded", () => {
   revealElements.forEach((element) => {
     observer.observe(element);
   });
+
+  const floatingContact = document.getElementById("floatingContact");
+
+  if (floatingContact) {
+    const toggleButton = floatingContact.querySelector(".floating-contact-toggle");
+
+    toggleButton.addEventListener("click", () => {
+      const isOpen = floatingContact.classList.toggle("is-open");
+
+      toggleButton.setAttribute("aria-expanded", String(isOpen));
+      document.body.classList.toggle("has-floating-contact-open", isOpen);
+    });
+  }
 });

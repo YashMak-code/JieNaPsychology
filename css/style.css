@@ -1158,7 +1158,7 @@ nav a:hover::after {
 
 /* ==============================
    Floating Contact
-   右下角轻量联系条
+   右下角轻量联系入口
 ============================== */
 
 .floating-contact {
@@ -1166,15 +1166,27 @@ nav a:hover::after {
   right: 28px;
   bottom: 28px;
   z-index: 999;
-  width: 220px;
-  padding: 16px 16px 14px;
-  background: rgba(247, 243, 236, 0.88);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(47, 74, 56, 0.10);
-  border-radius: 16px;
-  box-shadow: 0 12px 30px rgba(38, 59, 45, 0.10);
+  width: 250px;
+  background: rgba(255, 253, 248, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(47, 74, 56, 0.14);
+  border-radius: 18px;
+  box-shadow: 0 18px 42px rgba(38, 59, 45, 0.14);
   color: var(--primary-dark);
+  overflow: hidden;
+  animation: floatingContactIn 0.7s ease both;
+}
+
+.floating-contact-toggle {
+  display: none;
+}
+
+.floating-contact-body {
+  display: block;
+  padding: 18px 18px 16px;
+  text-decoration: none;
+  color: inherit;
 }
 
 .floating-contact-title {
@@ -1182,12 +1194,14 @@ nav a:hover::after {
   font-weight: 700;
   letter-spacing: 0.08em;
   color: var(--primary-dark);
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
-.floating-contact {
-  text-decoration: none;
-  cursor: pointer;
+.floating-contact-note {
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--muted);
+  margin-bottom: 10px;
 }
 
 .floating-contact-phone {
@@ -1198,7 +1212,7 @@ nav a:hover::after {
   transition: color 0.25s ease, transform 0.25s ease;
 }
 
-.floating-contact:hover .floating-contact-phone {
+.floating-contact-body:hover .floating-contact-phone {
   color: var(--primary);
   transform: translateX(2px);
 }
@@ -1245,5 +1259,91 @@ nav a:hover::after {
 
   body {
     padding-bottom: 96px;
+  }
+}
+
+@media (max-width: 768px) {
+  .floating-contact {
+    left: auto;
+    right: 16px;
+    bottom: 16px;
+    width: auto;
+    min-width: 128px;
+    max-width: calc(100vw - 32px);
+    border-radius: 999px;
+    transition:
+      width 0.3s ease,
+      border-radius 0.3s ease,
+      box-shadow 0.3s ease,
+      transform 0.25s ease;
+  }
+
+  .floating-contact-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+    border: none;
+    background: transparent;
+    color: var(--primary-dark);
+    padding: 12px 16px;
+    font: inherit;
+    cursor: pointer;
+  }
+
+  .floating-contact-toggle-text {
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+  }
+
+  .floating-contact-toggle-icon {
+    font-size: 1rem;
+    line-height: 1;
+    color: var(--primary);
+    transition: transform 0.25s ease;
+  }
+
+  .floating-contact-body {
+    display: none;
+    padding: 0 16px 14px;
+  }
+
+  .floating-contact.is-open {
+    width: calc(100vw - 32px);
+    border-radius: 18px;
+  }
+
+  .floating-contact.is-open .floating-contact-body {
+    display: block;
+  }
+
+  .floating-contact.is-open .floating-contact-toggle-icon {
+    transform: rotate(45deg);
+  }
+
+  .floating-contact-title {
+    display: none;
+  }
+
+  .floating-contact-note {
+    font-size: 0.84rem;
+    line-height: 1.65;
+    margin-bottom: 8px;
+  }
+
+  .floating-contact-phone {
+    font-size: 0.86rem;
+    line-height: 1.55;
+  }
+
+  body {
+    padding-bottom: 76px;
+  }
+
+  body.has-floating-contact-open {
+    padding-bottom: 154px;
   }
 }
