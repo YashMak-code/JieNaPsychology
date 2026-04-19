@@ -5,14 +5,21 @@
 }
 
 :root {
-  --bg: #f6f2eb;
-  --text: #1f2933;
-  --muted: #5f6b76;
-  --primary: #253746;
+  --bg: #f7f3ec;
+  --text: #26342c;
+  --muted: #687267;
+  --primary: #2f4a38;
+  --primary-dark: #263b2d;
   --secondary: #d9c7a2;
+  --sage: #7a8a6a;
+  --soft-green: #eef0e8;
   --white: #ffffff;
-  --card: #fffdf9;
-  --line: #e6dfd3;
+  --card: #fffdf8;
+  --line: #e7dfd2;
+  /* 首页 hero 背景图位置：调大 Y 值会让图片内容整体向上移动，例如 62%。 */
+  --hero-image-position-x: center;
+  --hero-image-position-y: 70%;
+  --hero-mobile-image-position-y: 50%;
 }
 
 body {
@@ -418,26 +425,6 @@ ul {
   }
 }
 
-.logo-link {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.logo-image {
-  width: 42px;
-  height: 42px;
-  object-fit: contain;
-  display: block;
-}
-
-.logo-text {
-  font-size: 1.1rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: var(--text);
-}
-
 .hero-with-image {
   position: relative;
   padding: 140px 0 120px;
@@ -484,15 +471,6 @@ ul {
 }
 
 @media (max-width: 900px) {
-  .logo-text {
-    font-size: 1rem;
-  }
-
-  .logo-image {
-    width: 36px;
-    height: 36px;
-  }
-
   .hero-with-image {
     padding: 100px 0 80px;
     background-position: center;
@@ -687,19 +665,6 @@ ul {
     font-size: 0.92rem;
   }
 
-  .logo-link {
-    gap: 10px;
-  }
-
-  .logo-image {
-    width: 34px;
-    height: 34px;
-  }
-
-  .logo-text {
-    font-size: 1rem;
-  }
-
   .hero,
   .hero-with-image {
     padding: 84px 0 68px;
@@ -866,4 +831,419 @@ nav {
   display: flex;
   flex-wrap: wrap;
   gap: 12px 18px;
+}
+
+/* 首页品牌 Hero：温暖森林绿版本 */
+.hero-brand {
+  position: relative;
+  min-height: 72vh;
+  padding: 120px 0;
+  background-image: url("../images/hero.jpg");
+  background-size: cover;
+  background-position: var(--hero-image-position-x) var(--hero-image-position-y);
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.hero-warm-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      to right,
+      rgba(246, 242, 235, 0.92) 0%,
+      rgba(246, 242, 235, 0.74) 36%,
+      rgba(246, 242, 235, 0.22) 66%,
+      rgba(246, 242, 235, 0.04) 100%
+    );
+}
+
+.hero-brand-inner {
+  position: relative;
+  z-index: 2;
+  min-height: 48vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-brand-panel {
+  max-width: 560px;
+  padding: 44px 0;
+}
+
+.hero-brand .eyebrow {
+  color: #5f6f52;
+  letter-spacing: 2.2px;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.hero-brand h1 {
+  font-size: clamp(3rem, 6vw, 5.8rem);
+  line-height: 1.05;
+  color: #263b2d;
+  margin-bottom: 18px;
+  letter-spacing: 0.02em;
+}
+
+.hero-subtitle {
+  font-size: 1.35rem;
+  color: #6f5f43;
+  margin-bottom: 24px;
+  letter-spacing: 0.04em;
+}
+
+.hero-brand .hero-text {
+  color: #4f5a50;
+  font-size: 1.05rem;
+  line-height: 1.9;
+  max-width: 520px;
+  margin-bottom: 32px;
+}
+
+.hero-brand .btn-primary {
+  background: #2f4a38;
+  color: #fff;
+}
+
+.hero-brand .btn-primary:hover {
+  background: #263b2d;
+}
+
+.hero-soft-btn {
+  border: 1px solid #2f4a38;
+  color: #2f4a38;
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.hero-soft-btn:hover {
+  background: rgba(47, 74, 56, 0.08);
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-image {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  display: block;
+}
+
+.logo-text {
+  font-size: 1.18rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--primary-dark);
+}
+
+@media (max-width: 768px) {
+  .logo-link {
+    gap: 10px;
+  }
+
+  .logo-image {
+    width: 34px;
+    height: 34px;
+  }
+
+  .logo-text {
+    font-size: 1rem;
+  }
+
+  .hero-brand {
+    min-height: auto;
+    padding: 76px 0 64px;
+    background-position: var(--hero-image-position-x) var(--hero-mobile-image-position-y);
+  }
+
+  .hero-warm-overlay {
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(247, 243, 236, 0.92) 0%,
+        rgba(247, 243, 236, 0.78) 58%,
+        rgba(247, 243, 236, 0.38) 100%
+      );
+  }
+
+  .hero-brand-inner {
+    min-height: auto;
+  }
+
+  .hero-brand-panel {
+    max-width: 100%;
+    padding: 22px 0;
+  }
+
+  .hero-brand h1 {
+    font-size: 3rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .hero-brand .hero-text {
+    font-size: 0.98rem;
+  }
+}
+
+/* ==============================
+   Subtle Motion System
+   轻量高级动效
+============================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  animation: pageFadeIn 0.7s ease both;
+}
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* 页面滚动浮现 */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 更柔和的延迟层次 */
+.reveal-delay-1 {
+  transition-delay: 0.08s;
+}
+
+.reveal-delay-2 {
+  transition-delay: 0.16s;
+}
+
+.reveal-delay-3 {
+  transition-delay: 0.24s;
+}
+
+/* 导航轻微动效 */
+nav a {
+  position: relative;
+  transition: color 0.25s ease;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 1px;
+  background: var(--primary);
+  transition: width 0.28s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* 按钮更细腻 */
+.btn {
+  transition:
+    transform 0.25s ease,
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(38, 59, 45, 0.12);
+}
+
+/* 图片轻微呼吸感 */
+.team-photo,
+.hero-brand,
+.hero-with-image {
+  transition:
+    transform 0.7s ease,
+    filter 0.7s ease;
+}
+
+.team-photo-stage:hover .team-photo,
+.team-profile-photo:hover .team-photo {
+  transform: scale(1.018);
+}
+
+/* 服务、联系、普通内容块轻微 hover */
+.card,
+.service-card,
+.contact-main-card,
+.contact-side-card,
+.timeline-item,
+.issue-item {
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    border-color 0.28s ease;
+}
+
+.card:hover,
+.service-card:hover,
+.contact-main-card:hover,
+.contact-side-card:hover,
+.timeline-item:hover,
+.issue-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 34px rgba(38, 59, 45, 0.08);
+  border-color: rgba(47, 74, 56, 0.18);
+}
+
+/* 首页 hero 文字入场 */
+.hero-brand-panel,
+.hero-content,
+.page-hero-content {
+  animation: heroTextIn 0.85s ease both;
+}
+
+@keyframes heroTextIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* 减少动态偏好：尊重用户系统设置 */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ==============================
+   Floating Contact
+   右下角轻量联系条
+============================== */
+
+.floating-contact {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  z-index: 999;
+  width: 220px;
+  padding: 16px 16px 14px;
+  background: rgba(247, 243, 236, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(47, 74, 56, 0.10);
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(38, 59, 45, 0.10);
+  color: var(--primary-dark);
+}
+
+.floating-contact-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--primary-dark);
+  margin-bottom: 10px;
+}
+
+.floating-contact {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.floating-contact-phone {
+  display: block;
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--muted);
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.floating-contact:hover .floating-contact-phone {
+  color: var(--primary);
+  transform: translateX(2px);
+}
+
+.floating-contact:hover {
+  transform: translateY(-2px);
+}
+
+@keyframes floatingContactIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .floating-contact {
+    left: 18px;
+    right: 18px;
+    bottom: 18px;
+    width: auto;
+    padding: 13px 16px;
+    border-radius: 16px;
+  }
+
+  .floating-contact-title {
+    font-size: 0.86rem;
+    margin-bottom: 4px;
+  }
+
+  .floating-contact-note {
+    font-size: 0.78rem;
+    margin-bottom: 4px;
+  }
+
+  .floating-contact-phone {
+    font-size: 0.84rem;
+    line-height: 1.45;
+  }
+
+  body {
+    padding-bottom: 96px;
+  }
 }
